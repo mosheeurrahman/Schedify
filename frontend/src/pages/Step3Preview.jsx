@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import html2canvas from 'html2canvas'
 import { useRoutine } from '../context/RoutineContext'
 import RoutineTable from '../components/RoutineTable'
+import { useEffect } from 'react';
 import Footer from '../components/Footer'
 
 function Step3Preview() {
@@ -11,10 +12,11 @@ function Step3Preview() {
   const { semester, examType, routine, resetAll } = useRoutine()
  
   // Guard: if no routine data, send back to start
-  if (!routine || routine.length === 0) {
-    navigate('/')
-    return null
-  }
+  useEffect(() => {
+    if (!routine || routine.length === 0) {
+      navigate('/');
+    }
+  }, [routine, navigate]);
  
   // Capture the table div and download as JPG
   async function handleDownload() {
