@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import html2canvas from 'html2canvas'
 import { useRoutine } from '../context/RoutineContext'
