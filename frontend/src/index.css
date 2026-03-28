@@ -368,3 +368,71 @@ body {
   .action-bar { flex-direction: column; gap: 10px; }
   .action-bar button { width: 100%; }
 }
+
+/* ── FOOTER ────────────────────────────── */
+.footer {
+  width: 100%;
+  padding: 28px 16px 24px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--purple));
+  border-radius: 999px;
+  margin: 0 auto 16px;
+}
+
+.footer-copy {
+  font-size: 0.82rem;
+  color: var(--gray);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.footer-rights {
+  font-size: 0.78rem;
+  color: #9CA3AF;
+  margin-bottom: 16px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gray-light);
+  color: var(--gray);
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 1.5px solid var(--border);
+}
+
+.footer-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(26,86,219,0.15);
+}
+
+.footer-icon.github:hover   { background: #1F2937; color: #ffffff; border-color: #1F2937; }
+.footer-icon.linkedin:hover { background: #0A66C2; color: #ffffff; border-color: #0A66C2; }
+.footer-icon.codeforces:hover { background: #1F8ACB; color: #ffffff; border-color: #1F8ACB; }
+.footer-icon.youtube:hover  { background: #FF0000; color: #ffffff; border-color: #FF0000; }
+.footer-icon.facebook:hover { background: #1877F2; color: #ffffff; border-color: #1877F2; }
+.footer-icon.email:hover    { background: var(--purple); color: #ffffff; border-color: var(--purple); }
+
+.footer-icon svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}

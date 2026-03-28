@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useRoutine } from '../context/RoutineContext'
 import SearchInput from '../components/SearchInput'
+import Footer from '../components/Footer'
  
 const API = 'http://localhost:5000/api'
  
@@ -91,7 +92,7 @@ function Step2Courses() {
   }
  
   return (
-    <div className="page">
+    <div className="page" style={{ flexDirection: 'column' }}>
  
       <div className="logo-bar">
         <h1>Schedify</h1>
@@ -183,6 +184,7 @@ function Step2Courses() {
         </div>
  
       </div>
+      <Footer /> 
     </div>
   )
 }

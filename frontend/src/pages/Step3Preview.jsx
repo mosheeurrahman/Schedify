@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import html2canvas from 'html2canvas'
 import { useRoutine } from '../context/RoutineContext'
 import RoutineTable from '../components/RoutineTable'
+import Footer from '../components/Footer'
  
 function Step3Preview() {
   const navigate = useNavigate()
@@ -37,7 +38,7 @@ function Step3Preview() {
   return (
     <div
       className="page"
-      style={{ justifyContent: 'flex-start', paddingTop: '48px' }}
+      style={{ justifyContent: 'flex-start', paddingTop: '48px', flexDirection: 'column' }}
     >
       <div style={{ width: '100%', maxWidth: '960px', padding: '0 20px' }}>
  
@@ -78,6 +79,7 @@ function Step3Preview() {
         </div>
  
       </div>
+      <Footer /> 
     </div>
   )
 }
