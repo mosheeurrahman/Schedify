@@ -4,17 +4,23 @@ const RoutineTable = forwardRef(function RoutineTable(
   { routine, semester, examType }, ref
 ) {
   
-  function getDayName(dateStr) {
-    const date = new Date(dateStr)
-    return date.toLocaleDateString('en-US', { weekday: 'long' })
+
+  function parseDate(str) {
+    const [year, month, day] = str.split('-').map(Number)
+    return new Date(year, month - 1, day)
   }
+
   // Convert "2026-03-31" → "March 31, 2026"
   function niceDate(str) {
-    return new Date(str).toLocaleDateString("en-US", {
+    return parseDate(str).toLocaleDateString("en-US", {
       year:  "numeric",
       month: "long",
       day:   "numeric"
     })
+  }
+
+  function getDayName(str) {
+    return parseDate(str).toLocaleDateString("en-US", { weekday: "long" })
   }
  
   return (
