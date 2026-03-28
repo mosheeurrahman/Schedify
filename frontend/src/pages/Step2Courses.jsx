@@ -56,7 +56,7 @@ function Step2Courses() {
  
   // Add a new empty course row
   function addCourse() {
-    if (courses.length >= 5) return
+    if (courses.length >= 7) return
     setCourses([...courses, { course: '', section: '' }])
   }
  
@@ -106,7 +106,7 @@ function Step2Courses() {
         <p className="card-sub">
           {semester} &nbsp;•&nbsp;
           {examType === 'midterm' ? 'Midterm' : 'Final'} Exam
-          &nbsp;•&nbsp; Max 5 courses
+          &nbsp;•&nbsp; Max 7 courses
         </p>
  
         {/* Course Rows */}
@@ -155,10 +155,10 @@ function Step2Courses() {
         <button
           className="btn-add"
           onClick={addCourse}
-          disabled={courses.length >= 5}
+          disabled={courses.length >= 7}
         >
-          {courses.length >= 5
-            ? '✓ Maximum 5 courses reached'
+          {courses.length >= 7
+            ? '✓ Maximum 7 courses reached'
             : '＋ Add Another Course'
           }
         </button>
