@@ -5,7 +5,7 @@ import { useRoutine } from '../context/RoutineContext'
 import SearchInput from '../components/SearchInput'
 import Footer from '../components/Footer'
  
-const API = 'http://localhost:5000/api'
+const API = import.meta.env.VITE_API_URL
  
 function Step1Semester() {
   const navigate = useNavigate()

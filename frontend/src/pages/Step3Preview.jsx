@@ -4,7 +4,7 @@ import html2canvas from 'html2canvas'
 import { useRoutine } from '../context/RoutineContext'
 import RoutineTable from '../components/RoutineTable'
 import Footer from '../components/Footer'
- 
+
 function Step3Preview() {
   const navigate = useNavigate()
   const tableRef = useRef(null)
