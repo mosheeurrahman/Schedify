@@ -3,7 +3,11 @@ import { forwardRef } from 'react'
 const RoutineTable = forwardRef(function RoutineTable(
   { routine, semester, examType }, ref
 ) {
- 
+  
+  function getDayName(dateStr) {
+    const date = new Date(dateStr)
+    return date.toLocaleDateString('en-US', { weekday: 'long' })
+  }
   // Convert "2026-03-31" → "March 31, 2026"
   function niceDate(str) {
     return new Date(str).toLocaleDateString("en-US", {
@@ -33,6 +37,7 @@ const RoutineTable = forwardRef(function RoutineTable(
               <th>Course</th>
               <th>Section</th>
               <th>Date</th>
+              <th>Day</th>
               <th>Start Time</th>
               <th>End Time</th>
               <th>Room</th>
@@ -45,6 +50,7 @@ const RoutineTable = forwardRef(function RoutineTable(
                 <td><strong>{row.course}</strong></td>
                 <td>{row.section}</td>
                 <td>{niceDate(row.date)}</td>
+                <td>{getDayName(row.date)}</td> 
                 <td>{row.startTime}</td>
                 <td>{row.endTime}</td>
                 <td>{row.room}</td>
